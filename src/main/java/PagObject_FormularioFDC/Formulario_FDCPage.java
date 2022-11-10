@@ -38,7 +38,6 @@ public class Formulario_FDCPage extends Formulario_FDCMap {
 		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(4);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
-		
 		return this;
 	}
 

@@ -10,8 +10,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.itextpdf.text.BadElementException;
@@ -36,8 +35,6 @@ import com.itextpdf.text.pdf.PdfWriter;
 import PagObject_demoautomatizacion.BasePage;
 
 public class GenerarReportePdf {
-	 //LOGGER
-    Logger log = LogManager.getLogger(GenerarReportePdf.class.getName());
 
 	static FileOutputStream archivo;
 	static Paragraph titulo, urlApp, horaInicio;
@@ -107,12 +104,10 @@ public class GenerarReportePdf {
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-			
 		} catch (DocumentException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-			
 		   }
 		}
 		else 
@@ -121,13 +116,13 @@ public class GenerarReportePdf {
 		}
 	}
 
-	public static void createBody(String steps, String imagePath)
+	public static void createBody(String steps, String imagePath)   // // steps
 			throws DocumentException, MalformedURLException, IOException {
 
 		Paragraph parrafo = new Paragraph();// OBTENER EL NOMBRE DEL LOCALIZADOR
 		parrafo.setAlignment(Chunk.ALIGN_LEFT);
 		parrafo.setFont(FontFactory.getFont("Arial", 12, Font.NORMAL));
-		parrafo.add("\n\nAcción: " + steps + "\n");
+		parrafo.add("\n\nAcción: " + steps + "\n");    // steps
 		documento.add(parrafo);
 		Image imagen = Image.getInstance(imagePath);
 		imagen.scalePercent(26, 26);
@@ -143,13 +138,13 @@ public class GenerarReportePdf {
 		}
 	}
 	
-	public static void createErrorBody(String steps, String imagePath, String errorMessage)
+	public static void createErrorBody(By locator, String imagePath, String errorMessage)  // String steps
 			throws DocumentException, MalformedURLException, IOException {
 
 		Paragraph parrafo = new Paragraph();// OBTENER EL NOMBRE DEL LOCALIZADOR
 		parrafo.setAlignment(Chunk.ALIGN_LEFT);
 		parrafo.setFont(FontFactory.getFont("Times", 8, Font.NORMAL, BaseColor.GRAY));
-		parrafo.add("Acción: " + steps);
+		parrafo.add("Acción: " + locator);   // steps
 		documento.add(parrafo);
 		Image imagen = Image.getInstance(imagePath);
 		imagen.scalePercent(25, 35);
@@ -164,7 +159,7 @@ public class GenerarReportePdf {
 		Paragraph elementoError = new Paragraph();
 		elementoError.setAlignment(Chunk.ALIGN_LEFT);
 		elementoError.setFont(FontFactory.getFont("Times", 10, Font.NORMAL, BaseColor.RED));
-		elementoError.add("\nAcción con error: " + steps);
+		elementoError.add("\nAcción con error: " + locator);   // steps
 		Paragraph parrafoError = new Paragraph();
 		parrafoError.setAlignment(Chunk.ALIGN_LEFT);
 		parrafoError.setFont(FontFactory.getFont("Times", 6, Font.NORMAL, BaseColor.RED));

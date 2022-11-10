@@ -1,7 +1,5 @@
 package PagObject_FormularioFDC;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 import java.util.Random;
 
@@ -121,10 +119,7 @@ public class RechazarDCDPage extends RechazarDCDMap {
 		time(1);
 		click(Guardar,folderPath, "click xpath" , Evidencia);
 		time(28);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoGuardar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoGuardar);
-		assertTrue(validarElemento(lblResultadoGuardar, 6), "Caso fallo no logro comprobarlo");
-		
+		Assert.assertEquals(getElement(lblResultadoGuardar).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 		click(btnOk,folderPath, "click xpath" , Evidencia);
@@ -205,9 +200,6 @@ public class RechazarDCDPage extends RechazarDCDMap {
 		time(3);
 		click(btnAdicionar,folderPath, "click xpath" , Evidencia);
 		time(18);
-		ValidacionObjeto(validarElemento(lblResultadoAdicionar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoAdicionar);
-		assertTrue(validarElemento(lblResultadoAdicionar, 6), "Caso fallo no logro comprobarlo");
-	  	
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);

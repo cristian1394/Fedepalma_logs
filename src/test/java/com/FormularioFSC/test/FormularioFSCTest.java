@@ -8,13 +8,10 @@ import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 import utilities.MyScreenRecorder;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
-import com.demoautomatizacion.test.Login_Test;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
 import PagObject_demoautomatizacion.BasePage;
 
@@ -26,8 +23,6 @@ import PagObject_demoautomatizacion.BasePage;
 public class FormularioFSCTest extends BaseTest{
 	
 	public Properties fileprops = new Properties();
-	//LOGGER
-    Logger log = LogManager.getLogger(Login_Test.class.getName());
 		
 	public Properties getProperties() throws Exception {
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
@@ -52,9 +47,7 @@ public class FormularioFSCTest extends BaseTest{
     public void BuscarE () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);         
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -79,9 +72,7 @@ public class FormularioFSCTest extends BaseTest{
     public void BuscarI1 () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-		System.setProperty("testname", nomTest);             
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -104,9 +95,7 @@ public class FormularioFSCTest extends BaseTest{
     public void InterfazCreacion () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-		System.setProperty("testname", nomTest);          
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -130,9 +119,7 @@ public class FormularioFSCTest extends BaseTest{
     public void DMIExistentes () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);          
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -156,9 +143,7 @@ public class FormularioFSCTest extends BaseTest{
     public void ICND () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();    
-		System.setProperty("testname", nomTest);          
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -183,9 +168,7 @@ public class FormularioFSCTest extends BaseTest{
     public void CFMI () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();     
-		System.setProperty("testname", nomTest);        
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -210,9 +193,7 @@ public class FormularioFSCTest extends BaseTest{
     public void CIP () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);        
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -237,9 +218,7 @@ public class FormularioFSCTest extends BaseTest{
     public void CCM () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-		System.setProperty("testname", nomTest);              
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -263,9 +242,7 @@ public class FormularioFSCTest extends BaseTest{
     public void AdicionarDMI () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();    
-		System.setProperty("testname", nomTest);   
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -290,9 +267,7 @@ public class FormularioFSCTest extends BaseTest{
     public void CargeFMI () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);         
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -318,9 +293,7 @@ public class FormularioFSCTest extends BaseTest{
     public void CargeCCM () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName(); 
-		System.setProperty("testname", nomTest);  
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -347,9 +320,7 @@ public class FormularioFSCTest extends BaseTest{
     public void CargeCIP () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);      
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -375,9 +346,7 @@ public class FormularioFSCTest extends BaseTest{
     public void CargeIncumplimento () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName(); 
-		System.setProperty("testname", nomTest);  
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -403,9 +372,7 @@ public class FormularioFSCTest extends BaseTest{
     public void ResumenDemostracion () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-		System.setProperty("testname", nomTest);    
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -434,9 +401,7 @@ public class FormularioFSCTest extends BaseTest{
     public void SalirFSC () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);            
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -461,9 +426,7 @@ public class FormularioFSCTest extends BaseTest{
     public void RevisarFSC () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-		System.setProperty("testname", nomTest);      
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -492,9 +455,7 @@ public class FormularioFSCTest extends BaseTest{
     public void VerHistorial () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName(); 
-		System.setProperty("testname", nomTest);      
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -518,9 +479,7 @@ public class FormularioFSCTest extends BaseTest{
     public void ExportarHistorial () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-		System.setProperty("testname", nomTest);      
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -544,9 +503,7 @@ public class FormularioFSCTest extends BaseTest{
     public void VerFSC () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);        
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -570,9 +527,7 @@ public class FormularioFSCTest extends BaseTest{
     public void VerEdicionFSC () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);       
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -596,9 +551,7 @@ public class FormularioFSCTest extends BaseTest{
     public void EdicionFSC () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);        
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -623,9 +576,7 @@ public class FormularioFSCTest extends BaseTest{
     public void EliminarFSC () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);            
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));

@@ -1,7 +1,5 @@
 package PagObject_FormularioFSC;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.Keys;
@@ -236,9 +234,6 @@ public class FormularioFSCPage extends FormularioFSCMap  {
     public FormularioFSCPage AlertaDMI(String resultado, File folderPath, String Evidencia) throws Exception { 
         
 		time(2);
-		ValidacionObjeto(validarElemento(lblAdicionar, 6), "Validacion del objecto", folderPath, Evidencia, lblAdicionar);
-		assertTrue(validarElemento(lblAdicionar, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblAdicionar).getText(),resultado);
 		time(1);
         captureScreen(folderPath, "Capture screen" , Evidencia);
@@ -271,9 +266,6 @@ public class FormularioFSCPage extends FormularioFSCMap  {
         time(3);
 		click(btnAdicionar,folderPath, "click xpath" , Evidencia);
 		time(10);
-		ValidacionObjeto(validarElemento(lblAdicionar, 6), "Validacion del objecto", folderPath, Evidencia, lblAdicionar);
-		assertTrue(validarElemento(lblAdicionar, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblAdicionar).getText(),resultado);
 		time(1);
         captureScreen(folderPath, "Capture screen" , Evidencia);
@@ -299,9 +291,6 @@ public class FormularioFSCPage extends FormularioFSCMap  {
 		 WebElement ruta = driver.findElement(CargaFMI);
 		 ruta.sendKeys(file.getAbsolutePath()); 
 		time(1);
-		ValidacionObjeto(validarElemento(lblResultadoCargas, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCargas);
-		assertTrue(validarElemento(lblResultadoCargas, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblResultadoCargas).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(5);
@@ -325,9 +314,6 @@ public class FormularioFSCPage extends FormularioFSCMap  {
 		 WebElement ruta = driver.findElement(CargaCCM);
 		 ruta.sendKeys(file.getAbsolutePath()); 
 		time(1);
-		ValidacionObjeto(validarElemento(lblResultadoCargas, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCargas);
-		assertTrue(validarElemento(lblResultadoCargas, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblResultadoCargas).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(5);
@@ -351,9 +337,6 @@ public class FormularioFSCPage extends FormularioFSCMap  {
 		 WebElement ruta = driver.findElement(CargaCIP);
 		 ruta.sendKeys(file.getAbsolutePath()); 
 		time(1);
-		ValidacionObjeto(validarElemento(lblResultadoCargas, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCargas);
-		assertTrue(validarElemento(lblResultadoCargas, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblResultadoCargas).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(5);
@@ -377,9 +360,6 @@ public class FormularioFSCPage extends FormularioFSCMap  {
 		 WebElement ruta = driver.findElement(CargaIncumplimiento);
 		 ruta.sendKeys(file.getAbsolutePath()); 
 		time(1);
-		ValidacionObjeto(validarElemento(lblResultadoCargas, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCargas);
-		assertTrue(validarElemento(lblResultadoCargas, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblResultadoCargas).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(5);
@@ -405,9 +385,6 @@ public class FormularioFSCPage extends FormularioFSCMap  {
     public FormularioFSCPage ERevisarFSC(String resultado, File folderPath, String Evidencia) throws Exception { 
 		
         time(2);
-        ValidacionObjeto(validarElemento(lblResultadoError, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoError);
-        assertTrue(validarElemento(lblResultadoError, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblResultadoError).getText(),resultado);
 		time(1);
         captureScreen(folderPath, "Capture screen" , Evidencia);
