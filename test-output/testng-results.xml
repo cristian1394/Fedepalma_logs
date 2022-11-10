@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-09T15:00:59Z" name="Default suite" finished-at="2022-11-09T15:02:29Z" duration-ms="90410">
+    <groups>
+    </groups>
+    <test started-at="2022-11-09T15:00:59Z" name="Default test" finished-at="2022-11-09T15:02:29Z" duration-ms="90410">
+      <class name="com.AdministracionFiniquitos.test.CrearTest">
+        <test-method is-config="true" signature="inicializar()[pri:0, instance:com.AdministracionFiniquitos.test.CrearTest@1376883]" started-at="2022-11-09T15:00:59Z" name="inicializar" finished-at="2022-11-09T15:01:04Z" duration-ms="5122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inicializar -->
+        <test-method signature="ConsultarFCPPortalFedepalma()[pri:0, instance:com.AdministracionFiniquitos.test.CrearTest@1376883]" started-at="2022-11-09T15:01:04Z" name="ConsultarFCPPortalFedepalma" description="Consultar Formulario Administracion FCP" finished-at="2022-11-09T15:02:29Z" duration-ms="84659" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ConsultarFCPPortalFedepalma -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.AdministracionFiniquitos.test.CrearTest@1376883]" started-at="2022-11-09T15:02:29Z" name="tearDown" finished-at="2022-11-09T15:02:29Z" duration-ms="384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.AdministracionFiniquitos.test.CrearTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

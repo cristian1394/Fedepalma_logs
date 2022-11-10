@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="filename">./output</Property>
+		<property name="filePattern">${date:yyyy-MM-dd}</property>
+	</Properties>
+
+	<Appenders>
+		<!-- <RollingFile name="file" fileName="${filename}/logEvidencias.log" filePattern="${filename}/logEvidencias-%d{HH-mm-ss}.log"> -->
+		<RollingFile name="file" filePattern="${filename}/${sys:testname}-%d{yyyyMMdd-HHmmss}.log">
+			<PatternLayout>
+				<pattern>%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</pattern>
+			</PatternLayout>
+			<SizeBasedTriggeringPolicy size="10 MB" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<!-- com.GuiaUnica.pages.utils -->
+		<Logger name="PagObject_demoautomatizacion.BasePage" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.pages.utils.MyScreenRecorder" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.pages.utils.ReportePDF" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.AdministracionSolicitudesNuevos.test.CreacionSolicitudTest" level="info" additivity="false">
+			<AppenderRef ref="file" /> 
+		</Logger>
+		<!-- com.GuiaUnica.Administracion.test -->		
+		<Logger name="com.AdministracionFiniquitos.test.CrearTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.Ciudades_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.CodigosHomologados_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.CodigosTransportadora_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.Departamentos_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.HomologarLocaciones_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.LocalesDeAbastecimiento_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.OperadorLogistico_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.RolesYPerfiles_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Administracion.test.Usuarios_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<!-- com.GuiaUnica.Guias.test -->	
+		<Logger name="com.GuiaUnica.Guias.test.ConsultarPedidos_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.Guias.test.GeneracionPedidos_Test." level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<!-- com.GuiaUnica.GuiasRO.test -->	
+		<Logger name="com.GuiaUnica.GuiasRO.test.PedidosDevueltos_Test" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.GuiaUnica.GuiasRO.test.GuiasGeneradas_Test" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Root level="fatal">
+			<AppenderRef ref="file" />
+		</Root>
+	</Loggers>
+
+</Configuration>
