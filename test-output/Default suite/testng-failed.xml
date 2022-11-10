@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.AdministracionSolicitudesNuevos.test.CreacionSolicitudTest">
+      <class name="com.AdministracionFiniquitos.test.CrearTest">
         <methods>
-          <include name="CancelarCreacion"/>
+          <include name="CrearDEXPortalFedepalma"/>
           <include name="tearDown"/>
           <include name="inicializar"/>
         </methods>
-      </class> <!-- com.AdministracionSolicitudesNuevos.test.CreacionSolicitudTest -->
+      </class> <!-- com.AdministracionFiniquitos.test.CrearTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

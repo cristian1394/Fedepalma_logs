@@ -1,5 +1,7 @@
 package PagObject_ConsultaDCD;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -40,13 +42,17 @@ public class ExepcionCMDCDPage extends ExepcionCMDCDMap {
 
 	@Step("Resultado de la carga masiva del DCD")
 	public ExepcionCMDCDPage ValidarResultadoCargaDCD(String resultado, File folderPath, String Evidencia) throws Exception {
-
+ 
+		
+	  	ValidacionObjeto(validarElemento(lblResultadoCargaArchivo, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCargaArchivo);
+		assertTrue(validarElemento(lblResultadoCargaArchivo, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoCargaArchivo).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);
 		click(btnOkey,folderPath, "click xpath" , Evidencia);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
+		
 
 		return this;
 	}

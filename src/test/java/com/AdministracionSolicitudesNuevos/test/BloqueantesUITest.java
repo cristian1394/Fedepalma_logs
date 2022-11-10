@@ -8,11 +8,14 @@ import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 import utilities.MyScreenRecorder;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
+import com.demoautomatizacion.test.Login_Test;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
 
 import PagObject_demoautomatizacion.BasePage;
@@ -25,6 +28,8 @@ import PagObject_demoautomatizacion.BasePage;
 public class BloqueantesUITest extends BaseTest{
 	
 	public Properties fileprops = new Properties();
+	//LOGGER
+    Logger log = LogManager.getLogger(Login_Test.class.getName());
 		
 	public Properties getProperties() throws Exception {
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
@@ -51,7 +56,9 @@ public class BloqueantesUITest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void QuitarPermisoEmail () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
+		System.setProperty("testname", nomTest);  
+		log.info("SE INICIA TEST "+ nomTest);    
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
@@ -74,7 +81,9 @@ public class BloqueantesUITest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void QuitarPermisoFirma () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();    
+		System.setProperty("testname", nomTest);              
+		log.info("SE INICIA TEST "+ nomTest);    
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
@@ -96,7 +105,9 @@ public class BloqueantesUITest extends BaseTest{
     @Story("Quitar Permiso Perfil")
     @TmsLink("XRPRJ-1")
     public void QuitarPermisoPerfil () throws Exception {
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();    
+		System.setProperty("testname", nomTest);   
+		log.info("SE INICIA TEST "+ nomTest);    
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
@@ -119,7 +130,9 @@ public class BloqueantesUITest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void QuitarPermisoBoqueo () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
+		System.setProperty("testname", nomTest);       
+		log.info("SE INICIA TEST "+ nomTest);    
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
@@ -144,7 +157,9 @@ public class BloqueantesUITest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void FuncionamientoSinBloqueos () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
+		System.setProperty("testname", nomTest);      
+		log.info("SE INICIA TEST "+ nomTest);    
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
@@ -169,7 +184,9 @@ public class BloqueantesUITest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void VisualizarContenedor () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();     
+		System.setProperty("testname", nomTest);     
+		log.info("SE INICIA TEST "+ nomTest);    
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 

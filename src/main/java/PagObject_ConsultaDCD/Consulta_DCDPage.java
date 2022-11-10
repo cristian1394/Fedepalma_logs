@@ -1,5 +1,7 @@
 package PagObject_ConsultaDCD;
 
+
+
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -46,6 +48,8 @@ public class Consulta_DCDPage extends Consulta_DCDMap {
         time(4);
         captureScreen(folderPath, "Capture screen" , Evidencia);
         return this;
+      
+  	 
     }
 	
 }

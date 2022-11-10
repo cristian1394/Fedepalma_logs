@@ -1,5 +1,7 @@
 package PagObject_ConsultaDCD;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -78,6 +80,9 @@ public class FiltrosDCDPage extends FiltrosDCDMap {
 		time(1);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
+		
+	    ValidacionObjeto(validarElemento(btnExportar, 6), "Validacion del objecto", folderPath, Evidencia, btnExportar);
+		assertTrue(validarElemento(btnExportar, 6), "Caso fallo no logro comprobarlo");
 
 		return this;
 	}

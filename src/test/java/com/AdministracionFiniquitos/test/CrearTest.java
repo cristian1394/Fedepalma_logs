@@ -14,8 +14,8 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.AdministracionSolicitudesNuevos.test.CreacionSolicitudTest;
 import com.demoautomatizacion.test.BaseTest;
+import com.demoautomatizacion.test.Login_Test;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
 
 import PagObject_demoautomatizacion.BasePage;
@@ -29,9 +29,8 @@ import PagObject_demoautomatizacion.BasePage;
 public class CrearTest extends BaseTest{
 	
 	public Properties fileprops = new Properties();
-	
 	//LOGGER
-    Logger log = LogManager.getLogger(CrearTest.class.getName());
+    Logger log = LogManager.getLogger(Login_Test.class.getName());
 		
 	public Properties getProperties() throws Exception {
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
@@ -60,9 +59,8 @@ public class CrearTest extends BaseTest{
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
         String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-        System.setProperty("testname", nomTest); 
-        log.info("SE INICIA TEST "+ nomTest); 
-       
+        System.setProperty("testname", nomTest);         
+        log.info("SE INICIA TEST "+ nomTest);    
 		
 		File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),getProperties().getProperty("Evidencia"));
 		
@@ -92,9 +90,9 @@ public class CrearTest extends BaseTest{
 		// Error al consultar DCD
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
-        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();        
-        System.setProperty("testname", nomTest);               
-        log.info("SE INICIA TEST "+ nomTest); 
+        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
+        System.setProperty("testname", nomTest);    
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),  getProperties().getProperty("Evidencia"));
 		
@@ -133,9 +131,9 @@ public class CrearTest extends BaseTest{
     public void CrearFMMPortalFedepalma () throws Exception {
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
-        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();          
-        System.setProperty("testname", nomTest);               
-        log.info("SE INICIA TEST "+ nomTest); 
+        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName(); 
+        System.setProperty("testname", nomTest);  
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -173,9 +171,9 @@ public class CrearTest extends BaseTest{
     public void CrearIncumplimientoPortalFedepalma () throws Exception {
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
-        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();            
-        System.setProperty("testname", nomTest);           
-        log.info("SE INICIA TEST "+ nomTest); 
+        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
+        System.setProperty("testname", nomTest); 
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video")); 
@@ -204,8 +202,8 @@ public class CrearTest extends BaseTest{
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
         String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName(); 
-        System.setProperty("testname", nomTest);            
-        log.info("SE INICIA TEST "+ nomTest); 
+        System.setProperty("testname", nomTest);         
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),  getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video")); 
@@ -229,9 +227,9 @@ public class CrearTest extends BaseTest{
     public void HistorialFCPPortalFedepalma () throws Exception {
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
-        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();        
-        System.setProperty("testname", nomTest);             
-        log.info("SE INICIA TEST "+ nomTest); 
+        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
+        System.setProperty("testname", nomTest);     
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),  getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video")); 
@@ -255,9 +253,9 @@ public class CrearTest extends BaseTest{
     public void ObservacionFCPPortalFedepalma () throws Exception {
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
-        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();    
-        System.setProperty("testname", nomTest);           
-        log.info("SE INICIA TEST "+ nomTest); 
+        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+        System.setProperty("testname", nomTest); 
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),  getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -281,9 +279,9 @@ public class CrearTest extends BaseTest{
     public void EditarFCPPortalFedepalma () throws Exception {
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
-        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();    
-        System.setProperty("testname", nomTest);              
-        log.info("SE INICIA TEST "+ nomTest); 
+        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
+        System.setProperty("testname", nomTest);      
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),  getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video")); 
@@ -307,9 +305,9 @@ public class CrearTest extends BaseTest{
     public void CrearFCPPortalFedepalma () throws Exception {
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
-        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-        System.setProperty("testname", nomTest);            
-        log.info("SE INICIA TEST "+ nomTest); 
+        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();     
+        System.setProperty("testname", nomTest);    
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),  getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -345,9 +343,9 @@ public class CrearTest extends BaseTest{
     public void RevisarIFCPPortalFedepalma () throws Exception {
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
-        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-        System.setProperty("testname", nomTest);          
-        log.info("SE INICIA TEST "+ nomTest); 
+        String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();     
+        System.setProperty("testname", nomTest);    
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),  getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));
@@ -376,8 +374,8 @@ public class CrearTest extends BaseTest{
 		
 		//OBTENER EL NOMBRE DEL METODO A EJECUTAR
         String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName(); 
-        System.setProperty("testname", nomTest);               
-        log.info("SE INICIA TEST "+ nomTest); 
+        System.setProperty("testname", nomTest);  
+        log.info("SE INICIA TEST "+ nomTest);    
 		
         File folderPath = BasePage.createFolder(nomTest,getProperties().getProperty("path"),  getProperties().getProperty("Evidencia"));
         MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video")); 

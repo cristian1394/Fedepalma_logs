@@ -1,5 +1,7 @@
 package PagObject_ConsultaDCD;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -30,6 +32,9 @@ public class BorrarDCDPage extends BorrarDCDMap {
 		time(1);
 		click(btnGuardar,folderPath, "click xpath" , Evidencia);
 		time(8);
+		
+	   ValidacionObjeto(validarElemento(btnGuardar, 6), "Validacion del objecto", folderPath, Evidencia, btnGuardar);
+	   assertTrue(validarElemento(btnGuardar, 6), "Caso fallo no logro comprobarlo");
 
 		return this;
 	}
@@ -38,6 +43,9 @@ public class BorrarDCDPage extends BorrarDCDMap {
 	public BorrarDCDPage ValidarResultadoBorrarDCD(String resultado, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
+		
+	    ValidacionObjeto(validarElemento(lblResultadoBorrar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoBorrar);
+		assertTrue(validarElemento(lblResultadoBorrar, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoBorrar).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);

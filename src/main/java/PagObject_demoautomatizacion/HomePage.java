@@ -15,6 +15,7 @@ public class HomePage extends BasePage {
         driver.get(url);
         time(1);
         return new HomePage(driver);
+     
     }
 
 }

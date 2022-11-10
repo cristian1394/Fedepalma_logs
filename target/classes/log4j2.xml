@@ -20,65 +20,276 @@
 		<Logger name="PagObject_demoautomatizacion.BasePage" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.pages.utils.MyScreenRecorder" level="info" additivity="false">
+		<Logger name="utilities.MyScreenRecorder" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.pages.utils.ReportePDF" level="info" additivity="false">
+		<Logger name="utilities.GenerarReportePdf" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
+		<!-- com.GuiaUnica.Account.test -->		
 		<Logger name="com.AdministracionSolicitudesNuevos.test.CreacionSolicitudTest" level="info" additivity="false">
-			<AppenderRef ref="file" /> 
+			<AppenderRef ref="file" />
 		</Logger>
 		<!-- com.GuiaUnica.Administracion.test -->		
 		<Logger name="com.AdministracionFiniquitos.test.CrearTest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.Ciudades_Test." level="info" additivity="false">
+		<Logger name="com.AdministracionSolicitudesNuevos.test.BloqueantesUETest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.CodigosHomologados_Test." level="info" additivity="false">
+		<Logger name="com.AdministracionSolicitudesNuevos.test.BloqueantesUITest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.CodigosTransportadora_Test." level="info" additivity="false">
+		<Logger name="com.AdministracionSolicitudesNuevos.test.CreacionSolicitudTest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.Departamentos_Test." level="info" additivity="false">
+		<Logger name="com.AdministracionUsuariosNuevos.test.BloqueantesUETest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.HomologarLocaciones_Test." level="info" additivity="false">
+		<Logger name="com.AdministracionUsuariosNuevos.test.BloqueantesUITest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.LocalesDeAbastecimiento_Test." level="info" additivity="false">
+		<Logger name="com.AdministracionUsuariosNuevos.test.CreacionSolicitudTest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.OperadorLogistico_Test." level="info" additivity="false">
+		<Logger name="com.ConsultaDCD.test.BorrarDCDTest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.RolesYPerfiles_Test." level="info" additivity="false">
+		<Logger name="com.ConsultaDCD.test.CargaMasivaDCDTest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.Administracion.test.Usuarios_Test." level="info" additivity="false">
+		<Logger name="com.ConsultaDCD.test.CrearDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.ConsultaDCD.test.EditarDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.ConsultaDCD.test.ExepcionCMDCDTest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
 		
-		<!-- com.GuiaUnica.Guias.test -->	
-		<Logger name="com.GuiaUnica.Guias.test.ConsultarPedidos_Test." level="info" additivity="false">
-			<AppenderRef ref="file" />
-		</Logger>
-		<Logger name="com.GuiaUnica.Guias.test.GeneracionPedidos_Test." level="info" additivity="false">
+		<Logger name="com.ConsultaDCD.test.ExepcionConsultarDCDTest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
 		
-		<!-- com.GuiaUnica.GuiasRO.test -->	
-		<Logger name="com.GuiaUnica.GuiasRO.test.PedidosDevueltos_Test" level="info" additivity="false">
+		<Logger name="com.ConsultaDCD.test.ExepcionesCrearDCDTest" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
-		<Logger name="com.GuiaUnica.GuiasRO.test.GuiasGeneradas_Test" level="info" additivity="false">
+		
+		<Logger name="com.ConsultaDCD.test.ExepcionGenerarDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.ConsultaDCD.test.ExepcionRevisarDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.ConsultaDCD.test.FiltrosDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.ConsultaDCD.test.GenerarDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.ConsultaDCD.test.HistorialDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.ConsultaDCD.test.ObservarDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.ConsultaDCD.test.RevisarDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.ConsultaReporteUDD.test.ConsultaReporteUDDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.demoautomatizacion.test.LoginTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.demoautomatizacion.test.utils.Listeners.TestListener" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.BorrarFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.CargaMasivaFDC2Test" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.CargaMasivaFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.CrearEsFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.CrearFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.Editar_FDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.EditarFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.ExepcionCrearFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.ExepcionesCrearFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.ExepcionesRevisarFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.FiltrosFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.HistorialFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.ObservarFDCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFDC.test.RechazarDCDTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		
+		<Logger name="com.FormularioFSC.test.ExepcionFSCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioFSC.test.FormularioFSCTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioNuevoFFP.test.BorrarFFPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		
+		<Logger name="com.FormularioNuevoFFP.test.ConsultarFFPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioNuevoFFP.test.CorreccionFFPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioNuevoFFP.test.CreacionNuevaDeclaracion2Test" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioNuevoFFP.test.CreacionNuevaDeclaracionTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioNuevoFFP.test.DeclararFFPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioNuevoFFP.test.EdicionFFPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioNuevoFFP.test.FiltrarFFPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.FormularioNuevoFFP.test.FirmaGerenteTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.ReporteCCertificado.test.ReporteCCertificadoTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.ReporteCCuotas.test.ReporteCCuotasTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.ReporteCSanciones.test.ReporteCSancionesTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.DiasEnProcesoRYPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.ExepcionObservacionRYPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.ExepcionRevicionRYPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.FiltrosDiasEnProcesoTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.FiltrosRYPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.ObservarRevicionesTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.RevicionesRYPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.ValidacionesFiltrosTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.RevicionesRYP.test.ValidacionesRYPTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.SecretariaTecnica.test.DiasEnProcesoSTTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.SecretariaTecnica.test.ExepcionObservacionSTTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.SecretariaTecnica.test.ExepcionRevicionSTTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.SecretariaTecnica.test.FiltrosSTTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.SecretariaTecnica.test.ObservarSTTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.SecretariaTecnica.test.RevicionSTTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.SecretariaTecnica.test.ValidacionesSTTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.Trazabilidad.test.AprobadasTrazabilidadTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.Trazabilidad.test.DiasEnProcesoTrazabilidadTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.Trazabilidad.test.ExepcionTrazabilidadTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.Trazabilidad.test.FiltrosTrazabilidadTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.Trazabilidad.test.ObservarTrazabilidadTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="com.Trazabilidad.test.TrazabilidadTest" level="info" additivity="false">
+			<AppenderRef ref="file" />
+		
+		
+		</Logger>
+	<Loggers>
+		<Logger name="Run" level="info" additivity="false">
 			<AppenderRef ref="file" />
 		</Logger>
 		<Root level="fatal">
 			<AppenderRef ref="file" />
 		</Root>
 	</Loggers>
-
+		</Logger>
+	</Loggers>
 </Configuration>

@@ -1,5 +1,7 @@
 package PagObject_ConsultaDCD;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -63,6 +65,9 @@ public class GenerarDCDPage extends GenerarDCDMap {
 		time(1);
 		click(btnEnviar,folderPath, "click xpath" , Evidencia);
 		time(5);
+		
+	  	ValidacionObjeto(validarElemento(lblResultadoFirma, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoFirma);
+		assertTrue(validarElemento(lblResultadoFirma, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoFirma).getText(),Resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
@@ -76,12 +81,16 @@ public class GenerarDCDPage extends GenerarDCDMap {
 	public GenerarDCDPage confirmar(String Resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(9);
+		
+	  	ValidacionObjeto(validarElemento(lblResultadoGenerar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoGenerar);
+		assertTrue(validarElemento(lblResultadoGenerar, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoGenerar).getText(),Resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
 		click(btnOk,folderPath, "click xpath" , Evidencia);
         captureScreen(folderPath, "Capture screen" , Evidencia);
         time(2);
+      
         
 		return this;
 		

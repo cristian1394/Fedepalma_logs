@@ -1,5 +1,7 @@
 package PagObject_ConsultaDCD;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -33,12 +35,16 @@ public class ExepcionesGenerarDCDPage extends ExepcionesGenerarDCDMap {
     public ExepcionesGenerarDCDPage ValidarGeneracionDCD(String Resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(6);
+		
+	  	ValidacionObjeto(validarElemento(lblResultadoGenerar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoGenerar);
+		assertTrue(validarElemento(lblResultadoGenerar, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoGenerar).getText(),Resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
 		click(btnOk,folderPath, "click xpath" , Evidencia);
         time(2);
         captureScreen(folderPath, "Capture screen" , Evidencia);
+      
 		
 		return this;
 	}

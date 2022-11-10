@@ -1,5 +1,7 @@
 package PagObject_FormularioFDC;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,6 +34,8 @@ public class CargarDEXPage extends CargarDEXMap {
 		click(btnOk,folderPath, "click xpath" , Evidencia);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
+		//assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
+	    //ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath);
 
 		return this;
 	}
@@ -50,6 +54,8 @@ public class CargarDEXPage extends CargarDEXMap {
 		click(btnOk,folderPath, "click xpath" , Evidencia);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
+		//assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
+	    //ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath);
 
 		return this;
 	}
@@ -67,6 +73,8 @@ public class CargarDEXPage extends CargarDEXMap {
 		time(3);
 		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
+		//assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
+	    //ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath);
 
 		return this;
 	}
@@ -84,6 +92,8 @@ public class CargarDEXPage extends CargarDEXMap {
 		time(3);
 		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
+		//assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
+	    //ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath);
 
 		return this;
 	}
@@ -101,6 +111,8 @@ public class CargarDEXPage extends CargarDEXMap {
 		time(3);
 		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(3);
+		//assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
+	    //ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath);
 
 		return this;
 	}
@@ -111,6 +123,8 @@ public class CargarDEXPage extends CargarDEXMap {
 		time(1);
 		click(btnRevisar,folderPath, "click xpath" , Evidencia);
 		time(7);
+		//assertTrue(validarElemento(btnRevisar, 6), "Caso fallo no logro comprobarlo");
+	    //ValidacionObjeto(validarElemento(btnRevisar, 6), "Validacion del objecto", folderPath);
 
 		return this;
 	}
@@ -123,6 +137,8 @@ public class CargarDEXPage extends CargarDEXMap {
 		time(1);
 		click(btnSalir,folderPath, "click xpath" , Evidencia);
 		time(8);
+		//assertTrue(validarElemento(btnRevisar, 6), "Caso fallo no logro comprobarlo");
+	    //ValidacionObjeto(validarElemento(btnRevisar, 6), "Validacion del objecto", folderPath);
 
 		return this;
 	}

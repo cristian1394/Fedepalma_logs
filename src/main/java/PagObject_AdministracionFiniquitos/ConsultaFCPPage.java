@@ -1,5 +1,7 @@
 package PagObject_AdministracionFiniquitos;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.util.Random;
 
@@ -41,6 +43,7 @@ public class ConsultaFCPPage extends MapObject_AdministracionFiniquitos.Consulta
 	    time(1);
         //screenshot();
         time(2);
+        
         return this;
     }
 	
@@ -140,12 +143,15 @@ public class ConsultaFCPPage extends MapObject_AdministracionFiniquitos.Consulta
         time(5);
         click(btnOk1, folderPath, "texto prueba" , Evidencia);
         time(1);
-		Assert.assertEquals(getElement(lblResultadoBorrar).getText(), Resultado);
+        
+  	    ValidacionObjeto(validarElemento(lblResultadoBorrar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoBorrar);
+  	    assertTrue(validarElemento(lblResultadoBorrar, 6), "Caso fallo no logro comprobarlo");
 		//screenshot();
         time(6);
         click(btnOK1, folderPath, "texto prueba" , Evidencia);
         
         time(2);
+      
         
         return this;
     }
@@ -310,6 +316,7 @@ public class ConsultaFCPPage extends MapObject_AdministracionFiniquitos.Consulta
 	    time(2);
 	    click(btnFiltroN, folderPath, "texto prueba" , Evidencia);
         time(2);
+      
 		
 		return this;
 	}
@@ -353,12 +360,17 @@ public class ConsultaFCPPage extends MapObject_AdministracionFiniquitos.Consulta
 		 WebElement ruta = driver.findElement(btnCargaOtros);
 		 ruta.sendKeys(file.getAbsolutePath()); 
 		 time(7);
+		 
+		 ValidacionObjeto(validarElemento(lblResultadoAdicionar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoAdicionar);
+		 assertTrue(validarElemento(lblResultadoAdicionar, 6), "Caso fallo no logro comprobarlo");
 		 Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
 		 //screenshot();
 		 time(3);
 		click(btnOkCargas, folderPath, "texto prueba" , Evidencia);
 		
 		time(2500);
+		
+		
 			
 		return this;
 	
@@ -378,6 +390,7 @@ public class ConsultaFCPPage extends MapObject_AdministracionFiniquitos.Consulta
         time(2);
         click(btnAceptar, folderPath, "texto prueba" , Evidencia);
         time(1);
+     
         
         return this;
     }
@@ -440,6 +453,7 @@ public class ConsultaFCPPage extends MapObject_AdministracionFiniquitos.Consulta
         time(1);
  		
  		time(1);
+ 		
 		
 		return this;
 	}

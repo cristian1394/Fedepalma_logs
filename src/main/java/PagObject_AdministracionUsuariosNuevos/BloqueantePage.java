@@ -1,5 +1,7 @@
 package PagObject_AdministracionUsuariosNuevos;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -276,6 +278,8 @@ public class BloqueantePage extends BloqueanteMaps {
 	        time(5);
 	        click(btnOk, folderPath, "texto prueba" , Evidencia);
 	        time(1);
+	      assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
+		  ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath, Evidencia, btnOk);
         
         return this;
     }
@@ -294,6 +298,9 @@ public class BloqueantePage extends BloqueanteMaps {
 	        time(1);
 	        
 	        time(6);
+	      
+		  ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath, Evidencia, btnOk);
+		  assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
         
         return this;
     }
@@ -314,6 +321,9 @@ public class BloqueantePage extends BloqueanteMaps {
 	        time(18);
 	        click(btnOk, folderPath, "texto prueba" , Evidencia);
 	        time(1);
+	      
+		  ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath, Evidencia, btnOk);
+	      assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
         
         return this;
     }
@@ -331,6 +341,9 @@ public class BloqueantePage extends BloqueanteMaps {
 	        time(10);
 	        click(btnOk, folderPath, "texto prueba" , Evidencia);
 	        time(1);
+	      
+		   ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath, Evidencia, btnOk);
+	       assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
         
         return this;
     }

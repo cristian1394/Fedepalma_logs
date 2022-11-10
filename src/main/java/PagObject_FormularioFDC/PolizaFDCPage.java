@@ -1,5 +1,7 @@
 package PagObject_FormularioFDC;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.util.Random;
 
@@ -93,6 +95,9 @@ public class PolizaFDCPage extends PolizaFDCMap {
         time(1);
         click(btnAdicionar,folderPath, "click xpath" , Evidencia);
         time(20);
+        
+	  	ValidacionObjeto(validarElemento(lblResultadoAdicionar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoAdicionar);
+        assertTrue(validarElemento(lblResultadoAdicionar, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(5);
