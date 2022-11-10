@@ -1,7 +1,5 @@
 package PagObject_ConsultaDCD;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -27,9 +25,6 @@ public class HistorialDCDPage extends HistorialDCDMap {
         time(15);
         click(btnDCD,folderPath, "click xpath" , Evidencia);
         time(3);
-      
-	  ValidacionObjeto(validarElemento(btnDCD, 6), "Validacion del objecto", folderPath, Evidencia, btnDCD);
-      assertTrue(validarElemento(btnDCD, 6), "Caso fallo no logro comprobarlo");
         
         return this;
     }

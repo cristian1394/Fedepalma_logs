@@ -1,7 +1,5 @@
 package PagObject_ConsultaDCD;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 import java.util.ArrayList;
 
@@ -77,9 +75,6 @@ public class EditarDCDPage extends EditarDCDMap {
 	public EditarDCDPage ValidarAdicionCD(String resultado, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoAdicion, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoAdicion);
-		assertTrue(validarElemento(lblResultadoAdicion, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoAdicion).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);
@@ -105,9 +100,6 @@ public class EditarDCDPage extends EditarDCDMap {
 	public EditarDCDPage ValidarRevicionDCD(String Resultado, File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoRevicion, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoRevicion);
-		assertTrue(validarElemento(lblResultadoRevicion, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoRevicion).getText(), Resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);
@@ -135,9 +127,6 @@ public class EditarDCDPage extends EditarDCDMap {
 		time(1);
 		click(btnEnviar, folderPath, "click xpath" , Evidencia);
 		time(5);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoFirma, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoFirma);
-		assertTrue(validarElemento(lblResultadoFirma, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoFirma).getText(), Resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
@@ -151,9 +140,6 @@ public class EditarDCDPage extends EditarDCDMap {
 	public EditarDCDPage ValidarGenerarDCD(String Resultado, File folderPath, String Evidencia) throws Exception {
 
 		time(9);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoGenerar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoGenerar);
-		assertTrue(validarElemento(lblResultadoGenerar, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoGenerar).getText(), Resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
@@ -164,7 +150,6 @@ public class EditarDCDPage extends EditarDCDMap {
 		time(1);
 		click(btnCancelar, folderPath, "click xpath" , Evidencia);
 		time(10);
-		
 		// Proceso realizado exitosamente!
 
 		return this;

@@ -1,7 +1,5 @@
 package PagObject_FormularioFDC;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -35,9 +33,6 @@ public class CargaMasivaDEX2Page extends CargaMasivaDEX2Map {
 		time(3);
 		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(6);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoCarga, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCarga);
-		assertTrue(validarElemento(lblResultadoCarga, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoCarga).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(9);
@@ -47,7 +42,6 @@ public class CargaMasivaDEX2Page extends CargaMasivaDEX2Map {
 		click(btnCancelar,folderPath, "click xpath" , Evidencia);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
-		
 
 		return this;
 	}

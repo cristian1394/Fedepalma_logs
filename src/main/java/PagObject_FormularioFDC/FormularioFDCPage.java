@@ -1,7 +1,5 @@
 package PagObject_FormularioFDC;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -88,10 +86,7 @@ public class FormularioFDCPage extends FormularioFDCMap {
 		click(btnBuscar,folderPath, "click xpath" , Evidencia);
         time(4);
         captureScreen(folderPath, "Capture screen" , Evidencia);
-        
-	    ValidacionObjeto(validarElemento(btnBuscar, 6), "Validacion del objecto", folderPath, Evidencia, btnBuscar);
-        assertTrue(validarElemento(btnBuscar, 6), "Caso fallo no logro comprobarlo");
-	    return this;
+        return this;
     }
 	
 }

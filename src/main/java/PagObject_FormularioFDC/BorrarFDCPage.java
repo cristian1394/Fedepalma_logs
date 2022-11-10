@@ -1,7 +1,5 @@
 package PagObject_FormularioFDC;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -27,16 +25,12 @@ public class BorrarFDCPage extends BorrarFDCMap {
         time(5);
         click(btnOk,folderPath, "Capture screen" , Evidencia);
         time(1);
-        
-	  	ValidacionObjeto(validarElemento(lblResultadoBorrar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoBorrar);
-        assertTrue(validarElemento(lblResultadoBorrar, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoBorrar).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(6);
         click(btnOK,folderPath, "Capture screen" , Evidencia);
         captureScreen(folderPath, "Capture screen" , Evidencia);;
         time(2);
-       
         
         return this;
     }

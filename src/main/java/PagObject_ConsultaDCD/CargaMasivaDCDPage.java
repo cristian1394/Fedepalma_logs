@@ -1,7 +1,5 @@
 package PagObject_ConsultaDCD;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -37,9 +35,6 @@ public class CargaMasivaDCDPage extends CargaMasivaDCDMap {
 		click(btnOk,folderPath, "click xpath" , Evidencia);
 		time(15);
 		
-		ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath, Evidencia, btnOk);
-		assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
-		
         
         return this;
     }
@@ -48,17 +43,12 @@ public class CargaMasivaDCDPage extends CargaMasivaDCDMap {
     public CargaMasivaDCDPage ValidarResultadoCargaDCD(String resultado,File folderPath, String Evidencia) throws Exception {
 		
 		time(1);
-		
-	    ValidacionObjeto(validarElemento(lblResultadoCargaArchivo, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCargaArchivo);
-		assertTrue(validarElemento(lblResultadoCargaArchivo, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoCargaArchivo).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);
 		click(btnOkey,folderPath, "click xpath" , Evidencia);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(2);
-        
-      
 		
 		return this;
 	}

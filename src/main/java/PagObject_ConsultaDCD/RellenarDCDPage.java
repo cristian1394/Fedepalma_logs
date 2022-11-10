@@ -1,7 +1,5 @@
 package PagObject_ConsultaDCD;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -50,9 +48,6 @@ public class RellenarDCDPage extends RellenarDCDMap {
 		click(btnBuscar,folderPath, "click xpath" , Evidencia);
 		time(7);
         captureScreen(folderPath, "Capture screen" , Evidencia);
-        ValidacionObjeto(validarElemento(btnBuscar, 6), "Validacion del objecto", folderPath, Evidencia, btnBuscar);
-        assertTrue(validarElemento(btnBuscar, 6), "Caso fallo no logro comprobarlo");
-	  	
         
         return this;
     }
