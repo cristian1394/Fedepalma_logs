@@ -122,6 +122,8 @@ public class CreacionSolicitudPage extends CreacionSolicitudMaps {
     public CreacionSolicitudPage ConfirmarCreacion(File folderPath,String resultado, String Evidencia) throws Exception {
         
 		time(3);
+		assertTrue(validarElemento(lblResultadoSolicitud, 6), "Caso fallo no logro comprobarlo");
+	    ValidacionObjeto(validarElemento(lblResultadoSolicitud, 6), "Validacion del objecto", folderPath,Evidencia,lblResultadoSolicitud);
 		Assert.assertEquals(getElement(lblResultadoSolicitud).getText(),resultado);
 		captureScreen(folderPath,"captura Screen" , Evidencia);
         time(2);
@@ -139,20 +141,11 @@ public class CreacionSolicitudPage extends CreacionSolicitudMaps {
         
 		time(3);
 		
+		//ValidacionObjeto(validarElemento2(lblResultadoSolicitud, 6), "Validacion del objecto", folderPath,Evidencia,lblResultadoSolicitud);
 		//assertTrue(validarElemento2(lblResultadoSolicitud, 6), "Caso fallo no logro comprobarlo");
-        //ValidacionObjeto(validarElemento2(lblResultadoSolicitud, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoSolicitud);
 		
-        
-        //ValidacionObjeto(validarElemento2(Eliminar, 6), "Validacion del objecto", folderPath, Evidencia, Eliminar);
-        //assertTrue(validarElemento2(Eliminar, 6), "Estado del caso: Fallido");
-        
-        
-		//Assert.assertEquals(getElement(lblResultadoSolicitud).getText(),resultado);
-		
-		//Assert.assertEquals(getElement(Eliminar).getText(),resultado);
 		captureScreen(folderPath,"captura Screen" , Evidencia);
         time(1);
-        //click(btnOk, folderPath, "click ok" , Evidencia);
         click(Eliminar, folderPath, "click ok" , Evidencia);
         time(1);
         
@@ -175,6 +168,10 @@ public class CreacionSolicitudPage extends CreacionSolicitudMaps {
 	    time(3);
 	    
         time(1);
+        
+     
+	   ValidacionObjeto(validarElemento(btnEliminar, 6), "Validacion del objecto", folderPath, Evidencia, btnEliminar);
+	   assertTrue(validarElemento(btnEliminar, 6), "Caso fallo no logro comprobarlo");
         
         return this;
     }

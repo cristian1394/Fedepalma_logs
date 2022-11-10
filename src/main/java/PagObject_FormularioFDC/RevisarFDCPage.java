@@ -1,5 +1,7 @@
 package PagObject_FormularioFDC;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -38,6 +40,9 @@ public RevisarFDCPage RevisarFDC(String resultado, File folderPath, String Evide
 	time(4);
     captureScreen(folderPath, "Capture screen" , Evidencia);
     time(1);
+    ValidacionObjeto(validarElemento(lblResultadoRevisar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoRevisar);
+    assertTrue(validarElemento(lblResultadoRevisar, 6), "Caso fallo no logro comprobarlo");
+  	
 	Assert.assertEquals(getElement(lblResultadoRevisar).getText(),resultado);
 	captureScreen(folderPath, "Capture screen" , Evidencia);
     time(6);

@@ -1,5 +1,7 @@
 package PagObject_ConsultaDCD;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -46,12 +48,16 @@ public class ExepcionConsultaDCDPage extends ExepcionConsultaDCDMap {
 	public ExepcionConsultaDCDPage ValidarResultadoDCD(String resultado,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
+		
+	  	ValidacionObjeto(validarElemento(lblResultadoOK, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoOK);
+		assertTrue(validarElemento(lblResultadoOK, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoOK).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);
 		click(btnOK,folderPath, "click xpath" , Evidencia);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(3);
+		
 
 		return this;
 	}

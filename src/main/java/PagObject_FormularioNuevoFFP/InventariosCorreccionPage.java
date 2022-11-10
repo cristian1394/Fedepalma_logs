@@ -1,5 +1,7 @@
 package PagObject_FormularioNuevoFFP;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -90,6 +92,8 @@ public class InventariosCorreccionPage extends InventariosCorreccionMap {
 		time(1);
 		click(btnSi,folderPath, "click xpath" , Evidencia);
 		time(5);
+		//assertTrue(validarElemento(lblResultadoCorreccion, 6), "Caso fallo no logro comprobarlo");
+      	//ValidacionObjeto(validarElemento(lblResultadoCorreccion, 6), "Validacion del objecto", folderPath);
 		Assert.assertEquals(getElement(lblResultadoCorreccion).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);

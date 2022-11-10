@@ -40,7 +40,6 @@ import com.itextpdf.text.DocumentException;
 
 import io.qameta.allure.Attachment;
 import utilities.GenerarReportePdf;
-import utilities.MyScreenRecorder;
 import utilities.WriteExcelFile;
 
 public class BasePage {
@@ -49,7 +48,7 @@ public class BasePage {
 	public WebDriverWait wait;
 	
 	//LOGGER
-    Logger log = LogManager.getLogger(BasePage.class.getName());
+	Logger log = LogManager.getLogger(BasePage.class.getName());
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
@@ -67,6 +66,18 @@ public class BasePage {
 		System.out.println(texto);
 	}
 
+	//Metodo para validar que un elemento es visible, el visibility es traido por el sistema, retorna un verdadero o falso si el elemento esta presente
+    public boolean validarElemento1(By elementLocation, int time) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, time);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
+            return true ;
+        } catch (Exception ex)
+        {
+            return false;
+            
+        }
+    }
 	// METODO LOCALIZAR VARIABLE
 	public By locatorVariable(By locator, String valor) throws Exception {
 		String jj = locator.toString().replace("{0}", valor);
@@ -74,7 +85,9 @@ public class BasePage {
 		By localizador = By.xpath(kk);
 		return localizador;
 	}
-	
+
+
+
 	
     @Attachment(value = "{0}", type = "text/plain")
 
@@ -135,6 +148,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE READ TEXT ***"+ elementLocation + "\n"+e.toString());
 		}
 		return readText;
 	}
@@ -165,6 +179,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE WRITE TEXT ***"+ elementLocation + "\n"+e.toString());
 		}
 		else
 		{
@@ -195,6 +210,7 @@ public class BasePage {
 			return element;
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE ELEMENTO ***"+ elementLocation + "\n"+e.toString());
 		}
 		return element;
 	 }
@@ -215,7 +231,7 @@ public class BasePage {
 				captureScreen(folderPath, steps, Evidencia);
 			} catch (Exception e) {
 				GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
-				log.error("*** ERROR CLICK ELEMENTO *** "+elementLocation+ "\n"+ e.toString());
+				log.error("*** ERROR DE ELEMENTO ***"+ elementLocation + "\n"+e.toString());
 			}
 			
 			else 
@@ -237,6 +253,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE SUBMIT ***"+ elementLocation + "\n"+e.toString());
 		}
 	}
 
@@ -249,6 +266,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE CLEAR ***"+ elementLocation + "\n"+e.toString());
 		}
 	}
 	
@@ -274,6 +292,7 @@ public class BasePage {
 			return displayed;
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE DISPLAYED ***"+ elementLocation + "\n"+e.toString());
 		}
 		return false;
 	}
@@ -287,6 +306,7 @@ public class BasePage {
 			return display;
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE DISPLAYED ***"+ elementLocation + "\n"+e.toString());
 		}
 		return false;
 	}
@@ -302,6 +322,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR SELECCION DE ELEMENTO DE LISTA  ***"+ elementLocation + "\n"+e.toString());
 		}
 	}
 	
@@ -436,6 +457,7 @@ public class BasePage {
 		} catch (Exception e) {
 
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			
 		}
 		
 		else 
@@ -552,7 +574,6 @@ public class BasePage {
 		}
 	}
 	
-	
 	// CAPTURA DE PANTALLA
 	public static void captureScreenA(File folderPath, String steps) throws Exception {
 		String hora = horaSistema();
@@ -568,7 +589,7 @@ public class BasePage {
 	public static byte[] screenshot() {
 		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 	}
-     /*
+
 	// CAPTURA DE PANTALLA ERROR
 	public void captureError(File rutaCarpeta, String texto, String Evidencia, String mensajeError) throws Exception {
 		if (Evidencia.contains("SI")) {
@@ -580,23 +601,6 @@ public class BasePage {
 			deleteFile(rutaImagen);// ELIMNAR IMAGEN CREADA
 		}
 	}
-	*/
-	
-	// CAPTURA DE PANTALLA ERROR
-		public void captureError(File folderPath, By locator, String Evidencia, String mensajeError) throws Exception {
-			if (Evidencia.contains("SI")) {
-				String hora = horaSistema();
-				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(scrFile, new File(folderPath + "\\" + hora + ".png"));
-				String rutaImagen = new File(folderPath + "\\" + hora + ".png").toString();
-				GenerarReportePdf.createErrorBody(locator, rutaImagen, mensajeError);// INSTALAR LOCALIZADOR DE IMAGEN PDF
-				deleteFile(rutaImagen);// ELIMNAR IMAGEN CREADA
-			}
-		}
-	
-	
-	
-	
 
 	// METODO CAPTURA PDF
 	public void captureScreenPdf(File rutaCarpeta, String funcion) throws Exception {
@@ -652,6 +656,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE CARGA DE ARCHIVO DESDE LA MAQUINA  ***"+ elementLocation + "\n"+e.toString());
 		}
 	}
 	
@@ -711,6 +716,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			
 		}
 	}
 
@@ -744,6 +750,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE ETIQUETA ***"+ elementLocation + "\n"+e.toString());
 		}
 	}
 
@@ -761,6 +768,7 @@ public class BasePage {
 			captureScreen(folderPath, steps, Evidencia);
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE LIST RANDOM ***"+ elementLocation + "\n"+e.toString());
 		}
 	}
 	
@@ -797,60 +805,11 @@ public class BasePage {
 		}
 	}
 	
-	// METODO DE ASSERT DIEGO
 	
-// METODO ASSERT
-    
-    //Metodo para validar que un elemento es visible, el visibility es traido por el sistema, retorna un verdadero o falso si el elemento esta presente
-    public boolean validarElemento2(By elementLocation, int time) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, time);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
-            return true ;
-        } catch (Exception ex)
-        {
-            return false;
-        }
-    }
-    
-  //Se valida varios objetos que sea existente al convertirlo en un valor booleano de true o false
-    public void ValidacionObjeto(boolean valor1, String steps, File folderPath,String Evidencia ,By locator) throws Exception
-    
-    
-    {
-        
-    //##Ver el metodo validar objeto, se validan varios objetos pero se usa la misma mecanica de validar objeto
-        
-        if(valor1 == true)
-            
-        {
-            captureScreen(folderPath, steps, Evidencia);            
-        }
-        else
-        {
-        	screenshot1(folderPath, "No se ha logrado identificar el elemento");
-        	
-        	//MyScreenRecorder.stopRecording(("Video"));
-        
-        	GenerarReportePdf.closeTemplate("caso fallido", Evidencia);
-        
-        }
-    }
 	
-  //Metodo screenshot
-
-
-    public  byte[] screenshot1(File rutaCarpeta, String accion) throws IOException, DocumentException {
-        String hora = horaSistema();
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        //String rutaImagen = rutaCarpeta + "\\" + hora + "_"+funcion+".png";
-        String rutaImagen = rutaCarpeta + "\\" + hora + ".png";
-        FileUtils.copyFile(scrFile, new File(rutaImagen));
-        GenerarReportePdf.createBody(accion, rutaImagen);
-        deleteFile(rutaImagen);
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
-    
+	
+	
+	
 	
 
 	public boolean validarElementos(Object[] x, int time) {
@@ -892,6 +851,7 @@ public class BasePage {
 			return enabled;
 		} catch (Exception e) {
 			GenerarReportePdf.closeTemplate(e.toString(), Evidencia);
+			log.error("*** ERROR DE ISENABLED  ***"+ elementLocation + "\n"+e.toString());
 		}
 		return false;
 	}
@@ -921,6 +881,17 @@ public class BasePage {
 		action.sendKeys(Keys.ESCAPE).build().perform();
 	}
 	
+	//Metodo para validar que un elemento es visible, el visibility es traido por el sistema, retorna un verdadero o falso si el elemento esta presente
+    public boolean validarElemento2(By elementLocation, int time) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, time);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(elementLocation));
+            return true ;
+        } catch (Exception ex)
+        {
+            return false;
+        }
+    }
 	public void ValidacionObjetos(boolean valor1, boolean valor2, String caso, File folderPath ) throws IOException, DocumentException 
 	
 	{
@@ -940,23 +911,42 @@ public class BasePage {
 	}
 	
 	
-	public void ValidacionObjeto(boolean valor1, String caso, File folderPath ) throws IOException, DocumentException 
+	//Se valida varios objetos que sea existente al convertirlo en un valor booleano de true o false
+    public void ValidacionObjeto(boolean valor1, String steps, File folderPath,String Evidencia ,By locator) throws Exception
+    
+    
+    {
+        
+    //##Ver el metodo validar objeto, se validan varios objetos pero se usa la misma mecanica de validar objeto
+        
+        if(valor1 == true)
+            
+        {
+            captureScreen(folderPath, steps, Evidencia);            
+        }
+        else
+        {
+            screenshot1(folderPath, "No se ha logrado identificar el elemento");
+            
+            //MyScreenRecorder.stopRecording(("Video"));
+        
+            GenerarReportePdf.closeTemplate("caso fallido", Evidencia);
+        
+        }
+    }
 	
-	{
-		
-		if(valor1 == true  )
-			
-		{
-			screenshot(folderPath ,"La validacion es exitosa  para el caso " + caso );			
-		}
-		else 
-		{
-			screenshot(folderPath ,"La validacion no es exitosa el elemento a validar no esta presente " );
-					
-		}
-		
-			
-	}
+	//Metodo screenshot
+
+    public  byte[] screenshot1(File rutaCarpeta, String accion) throws IOException, DocumentException {
+        String hora = horaSistema();
+        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        //String rutaImagen = rutaCarpeta + "\\" + hora + "_"+funcion+".png";
+        String rutaImagen = rutaCarpeta + "\\" + hora + ".png";
+        FileUtils.copyFile(scrFile, new File(rutaImagen));
+        GenerarReportePdf.createBody(accion, rutaImagen);
+        deleteFile(rutaImagen);
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    }
 	
 	public void RecargarPagina(By elemenLocation) 
 	{

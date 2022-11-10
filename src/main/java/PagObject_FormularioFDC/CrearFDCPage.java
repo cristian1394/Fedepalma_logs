@@ -1,5 +1,7 @@
 package PagObject_FormularioFDC;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.util.Random;
 
@@ -70,8 +72,12 @@ public class CrearFDCPage extends CrearFDCMap {
         
        captureScreen(folderPath, "Capture screen" , Evidencia);
         time(4);
+        ValidacionObjeto(validarElemento(btnGuardar, 6), "Validacion del objecto", folderPath, Evidencia, btnGuardar);
+        assertTrue(validarElemento(btnGuardar, 6), "Caso fallo no logro comprobarlo");
+	    
         
         return this;
+        
     }
 	
 public void numeroAleatorio()throws Exception {

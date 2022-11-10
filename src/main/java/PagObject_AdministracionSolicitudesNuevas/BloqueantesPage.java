@@ -1,5 +1,7 @@
 package PagObject_AdministracionSolicitudesNuevas;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -349,6 +351,9 @@ public class BloqueantesPage extends BloqueantesMaps {
 	        time(1);
 	        captureScreen(folderPath, "Capture screen" , Evidencia);
 	        time(6);
+	      
+		  ValidacionObjeto(validarElemento(btnOk, 6), "Validacion del objecto", folderPath, Evidencia, btnOk);
+		  assertTrue(validarElemento(btnOk, 6), "Caso fallo no logro comprobarlo");
         
         return this;
     }

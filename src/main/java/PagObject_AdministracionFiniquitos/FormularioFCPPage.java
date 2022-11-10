@@ -1,5 +1,7 @@
 package PagObject_AdministracionFiniquitos;
 
+import static org.testng.Assert.assertTrue;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
@@ -452,6 +454,9 @@ public class FormularioFCPPage extends FormularioFCPMap {
 		WebElement ruta = driver.findElement(btnCargaIncumplimiento);
 		ruta.sendKeys(file.getAbsolutePath()); 
 		time(7);
+		
+	    ValidacionObjeto(validarElemento(lblResultadoAdicionar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoAdicionar);
+	    assertTrue(validarElemento(lblResultadoAdicionar, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoAdicionar).getText(),resultado);
 		captureScreen(folderPath, "captura Screen",Evidencia);
 		time(3);
@@ -514,6 +519,9 @@ public class FormularioFCPPage extends FormularioFCPMap {
 		captureScreen(folderPath, "captura Screen",Evidencia);
 		click(btnSeguir, folderPath, "click seguir",Evidencia);
 		driver.switchTo().window((String) ventana.get(0));
+		
+	    ValidacionObjeto(validarElemento(btnSeguir, 6), "Validacion del objecto", folderPath, Evidencia, btnSeguir);
+	    assertTrue(validarElemento(btnSeguir, 6), "Caso fallo no logro comprobarlo");
 		
 		return this;
 	}
