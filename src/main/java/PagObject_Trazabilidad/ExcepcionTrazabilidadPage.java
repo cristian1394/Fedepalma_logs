@@ -1,7 +1,5 @@
 package PagObject_Trazabilidad;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -44,8 +42,6 @@ public class ExcepcionTrazabilidadPage extends ExcepcionTrazabilidadMap {
     public ExcepcionTrazabilidadPage ValidarResultadoTrazabilidad(String resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(1);
-		//assertTrue(validarElemento(lblResultadoTrazabilidad, 6), "Caso fallo no logro comprobarlo");
-      	//ValidacionObjeto(validarElemento(lblResultadoTrazabilidad, 6), "Validacion del objecto", folderPath);
 		Assert.assertEquals(getElement(lblResultadoTrazabilidad).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(6);

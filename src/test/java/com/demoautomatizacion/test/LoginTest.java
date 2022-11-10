@@ -8,8 +8,6 @@ import io.qameta.allure.*;
 import utilities.GenerarReportePdf;
 import utilities.MyScreenRecorder;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -27,8 +25,6 @@ import PagObject_demoautomatizacion.BasePage;
 public class LoginTest extends BaseTest{
 	
 	public Properties fileprops = new Properties();
-	//LOGGER
-    Logger log = LogManager.getLogger(Login_Test.class.getName());
 		
 	public Properties getProperties() throws Exception {
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
@@ -53,9 +49,7 @@ public class LoginTest extends BaseTest{
     public void ingresarPortalFedepalma () throws Exception {
 		
 		// OBTENER EL NOMBRE DEL METODO A EJECUTAR
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();  
-		System.setProperty("testname", nomTest);      
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 		MyScreenRecorder.startRecording(nomTest, folderPath,getProperties().getProperty("Video"));

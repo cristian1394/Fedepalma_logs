@@ -10,12 +10,11 @@ import utilities.MyScreenRecorder;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
+import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.demoautomatizacion.test.BaseTest;
-import com.demoautomatizacion.test.Login_Test;
 import com.demoautomatizacion.test.utils.Listeners.TestListener;
 
 import PagObject_demoautomatizacion.BasePage;
@@ -28,8 +27,9 @@ import PagObject_demoautomatizacion.BasePage;
 public class CreacionSolicitudTest extends BaseTest{
 	
 	public Properties fileprops = new Properties();
+	
 	//LOGGER
-    Logger log = LogManager.getLogger(Login_Test.class.getName());
+    Logger log = LogManager.getLogger(CreacionSolicitudTest.class.getName());
 		
 	public Properties getProperties() throws Exception {
         fileprops.load(new FileInputStream(new File("src/test/resources/test.properties").getAbsolutePath()));
@@ -54,9 +54,7 @@ public class CreacionSolicitudTest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void CreacionCompleta () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);          
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
@@ -82,9 +80,10 @@ public class CreacionSolicitudTest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void CancelarCreacion () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();      
-		System.setProperty("testname", nomTest);           
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+		
+		System.setProperty("testname", nomTest);
+		log.info("SE INICIA TEST "+ nomTest);
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
@@ -108,9 +107,9 @@ public class CreacionSolicitudTest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void ObservacioObligatorio () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();   
-		System.setProperty("testname", nomTest);         
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
+		
+		
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 
@@ -134,9 +133,7 @@ public class CreacionSolicitudTest extends BaseTest{
     @TmsLink("XRPRJ-1")
     public void EliminarUsuario () throws Exception {
 		
-		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();    
-		System.setProperty("testname", nomTest);         
-		log.info("SE INICIA TEST "+ nomTest);    
+		String nomTest = Thread.currentThread().getStackTrace()[1].getMethodName();
 
 		File folderPath = BasePage.createFolder(nomTest, getProperties().getProperty("path"), getProperties().getProperty("Evidencia"));
 

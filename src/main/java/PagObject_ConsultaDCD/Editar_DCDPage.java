@@ -1,7 +1,5 @@
 package PagObject_ConsultaDCD;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -97,9 +95,6 @@ public class Editar_DCDPage extends Editar_DCDMap {
     public Editar_DCDPage ValidarAdicionCD(String resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(10);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoAdicion, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoAdicion);
-		assertTrue(validarElemento(lblResultadoAdicion, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoAdicion).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(6);
@@ -126,9 +121,6 @@ public class Editar_DCDPage extends Editar_DCDMap {
     public Editar_DCDPage ValidarCargaCD(String resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(9);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoCarga, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCarga);
-		assertTrue(validarElemento(lblResultadoCarga, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoCarga).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(1);
@@ -145,16 +137,12 @@ public class Editar_DCDPage extends Editar_DCDMap {
     public Editar_DCDPage ValidarGuardarDCD(String resultado, File folderPath, String Evidencia) throws Exception {
 		
 		time(9);
-		
-	  	ValidacionObjeto(validarElemento(lblResultadoGuardar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoGuardar);
-		assertTrue(validarElemento(lblResultadoGuardar, 6), "Caso fallo no logro comprobarlo");
 		Assert.assertEquals(getElement(lblResultadoGuardar).getText(),resultado);
 		time(3);
 		click(btnOkay,folderPath, "click xpath" , Evidencia);
 		time(5);
        captureScreen(folderPath, "Capture screen" , Evidencia);
 		//Proceso realizado con éxito
-     
 		
 		return this;
 	}

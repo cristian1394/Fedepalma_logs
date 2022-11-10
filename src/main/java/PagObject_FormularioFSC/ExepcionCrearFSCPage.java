@@ -1,7 +1,5 @@
 package PagObject_FormularioFSC;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -26,9 +24,6 @@ public class ExepcionCrearFSCPage extends ExepcionCrearFSCMap {
 		time(1);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(1);
-        ValidacionObjeto(validarElemento(lblResultadoCrear, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoCrear);
-        assertTrue(validarElemento(lblResultadoCrear, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblResultadoCrear).getText(),resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
         time(6);

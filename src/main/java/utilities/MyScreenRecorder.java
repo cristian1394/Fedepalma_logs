@@ -1,7 +1,6 @@
 package utilities;
 
 import java.awt.AWTException;
-
 import java.awt.Dimension;
 import java.awt.GraphicsConfiguration;
 import java.awt.GraphicsEnvironment;
@@ -12,26 +11,18 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.monte.media.Format;
 import org.monte.media.FormatKeys.MediaType;
 import org.monte.media.Registry;
 import org.monte.media.math.Rational;
 import org.monte.screenrecorder.ScreenRecorder;
 
-
-
 import static org.monte.media.AudioFormatKeys.*;
 import static org.monte.media.VideoFormatKeys.*;
-
 
 public class MyScreenRecorder extends ScreenRecorder {
 	public static ScreenRecorder screenRecorder;
 	public String name;
-	
-	//LOGGER
-    Logger log = LogManager.getLogger(MyScreenRecorder.class.getName());
 
 	public MyScreenRecorder(GraphicsConfiguration cfg, Rectangle captureArea, Format fileFormat, Format screenFormat,
 			Format mouseFormat, Format audioFormat, File movieFolder, String name) throws IOException, AWTException {
@@ -89,7 +80,6 @@ public class MyScreenRecorder extends ScreenRecorder {
 		else 
 		{
 			System.out.println("NO Evidencia");
-			
 		}
    }
 }

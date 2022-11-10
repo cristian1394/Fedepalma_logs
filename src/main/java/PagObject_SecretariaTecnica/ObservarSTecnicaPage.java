@@ -1,7 +1,5 @@
 package PagObject_SecretariaTecnica;
 
-import static org.testng.Assert.assertTrue;
-
 import java.io.File;
 
 import org.openqa.selenium.WebDriver;
@@ -51,9 +49,6 @@ public class ObservarSTecnicaPage extends ObservarSTecnicaMap {
 	public ObservarSTecnicaPage ValidarGuardarRevicion(String resultado,File folderPath, String Evidencia) throws Exception {
 
 		time(1);
-		ValidacionObjeto(validarElemento(lblResultadoGuardar, 6), "Validacion del objecto", folderPath, Evidencia, lblResultadoGuardar);
-		assertTrue(validarElemento(lblResultadoGuardar, 6), "Caso fallo no logro comprobarlo");
-      	
 		Assert.assertEquals(getElement(lblResultadoGuardar).getText(), resultado);
 		captureScreen(folderPath, "Capture screen" , Evidencia);
 		time(2);
